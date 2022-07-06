@@ -139,6 +139,15 @@ static NSString *const SUUpdaterDefaultsObservationContext = @"SUUpdaterDefaults
     return self;
 }
 
+-(void)abortUpdate {
+    [[self driver] abortUpdate];
+}
+
+- (NSString *)downloadPath {
+    SUBasicUpdateDriver* basicDriver = (SUBasicUpdateDriver *)[self driver];
+    return [basicDriver downloadPath];
+}
+
 -(void)showAlertText:(NSString *)text informativeText:(NSString *)informativeText {
     NSAlert *alert = [[NSAlert alloc] init];
     alert.messageText = text;

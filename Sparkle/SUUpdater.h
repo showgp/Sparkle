@@ -174,6 +174,10 @@ SU_EXPORT @interface SUUpdater : NSObject
  */
 @property (nonatomic, copy) NSString *decryptionPassword;
 
+- (void)abortUpdate;
+
+- (NSString *)downloadPath;
+
 /*!
     This function ignores normal update schedule, ignores user preferences,
     and interrupts users with an unwanted immediate app update.
